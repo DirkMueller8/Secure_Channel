@@ -1,0 +1,14 @@
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\bin\Debug\net10.0\Secure_Channel.exe
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\bin\Debug\net10.0\Secure_Channel.deps.json
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\bin\Debug\net10.0\Secure_Channel.runtimeconfig.json
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\bin\Debug\net10.0\Secure_Channel.dll
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\bin\Debug\net10.0\Secure_Channel.pdb
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.AssemblyInfoInputs.cache
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.AssemblyInfo.cs
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.csproj.CoreCompileInputs.cache
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.dll
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\refint\Secure_Channel.dll
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.pdb
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\Secure_Channel.genruntimeconfig.cache
+C:\Users\dirkm\source\repos\Secure_Channel\Secure_Channel\obj\Debug\net10.0\ref\Secure_Channel.dll
