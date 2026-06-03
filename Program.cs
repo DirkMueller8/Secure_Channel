@@ -112,38 +112,44 @@ class Program
         return minInclusive + r;
     }
 
-    // Miller-Rabin probable prime test for BigInteger to check for primality of p. Not deterministic for large values, but good enough for demonstration.
-    static bool IsProbablyPrime(BigInteger value, int witnesses = 6)
+    // Miller-Rabin primality test. Deterministic up to ~82 bits via fixed witnesses;
+    // above that bound adds randomWitnesses random rounds (false-positive prob ≤ 4^-randomWitnesses).
+    static bool IsProbablyPrime(BigInteger value, int randomWitnesses = 20)
     {
         if (value <= 1) return false;
         if (value <= 3) return true;
         if (value % 2 == 0) return false;
 
-        // small primes quick check
         int[] smallPrimes = { 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37 };
-        foreach (int p in smallPrimes)
+        foreach (int sp in smallPrimes)
         {
-            if (value == p) return true;
-            if (value % p == 0) return false;
+            if (value == sp) return true;
+            if (value % sp == 0) return false;
         }
 
         BigInteger d = value - 1;
         int s = 0;
-        while (d % 2 == 0)
-        {
-            d /= 2;
-            s++;
-        }
+        while (d % 2 == 0) { d /= 2; s++; }
 
-        // Deterministic bases for 64-bit values
-        BigInteger[] bases = { 2, 3, 5, 7, 11, 13 };
-        int used = 0;
-        foreach (var a in bases)
+        // {2..41} is a proven deterministic witness set for all n below this bound.
+        BigInteger[] fixedBases = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41];
+        BigInteger deterministicLimit = BigInteger.Parse("3317044064679887385961981");
+
+        foreach (var a in fixedBases)
         {
             if (a >= value) break;
             if (!MillerRabinWitness(a, value, d, s)) return false;
-            used++;
-            if (used >= witnesses) break;
+        }
+
+        if (value < deterministicLimit)
+            return true;
+
+        // Above the deterministic bound: supplement with random witnesses.
+        using var rng = RandomNumberGenerator.Create();
+        for (int i = 0; i < randomWitnesses; i++)
+        {
+            BigInteger a = RandomBigInteger(2, value - 2);
+            if (!MillerRabinWitness(a, value, d, s)) return false;
         }
 
         return true;
