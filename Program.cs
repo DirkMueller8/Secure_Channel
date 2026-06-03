@@ -20,7 +20,7 @@ class Program
         Console.WriteLine(" - shared secret S computed by both sides");
         Console.WriteLine();
 
-        BigInteger p = ReadBigInteger("Enter prime p");
+        BigInteger p = ReadBigInteger("Enter prime p (min 3)", min: 3);
         BigInteger g = ReadBigInteger($"Enter base g (1 < g < p) (p = {p})", min: 2, max: p - 1);
         BigInteger a = ReadBigInteger($"Enter Alice's private a (1 < a < p) (p = {p})", min: 2, max: p - 1);
         BigInteger b = ReadBigInteger($"Enter Bob's private b (1 < b < p) (p = {p})", min: 2, max: p - 1);
@@ -96,6 +96,7 @@ class Program
         }
     }
 
+    // static method
     static BigInteger RandomBigInteger(BigInteger minInclusive, BigInteger maxInclusive)
     {
         if (minInclusive > maxInclusive) throw new ArgumentException("min > max");
@@ -113,7 +114,7 @@ class Program
         return minInclusive + r;
     }
 
-    // Miller-Rabin probable prime test for BigInteger
+    // Miller-Rabin probable prime test for BigInteger to check for primality of p. Not deterministic for large values, but good enough for demonstration.
     static bool IsProbablyPrime(BigInteger value, int witnesses = 6)
     {
         if (value <= 1) return false;
