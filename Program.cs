@@ -21,17 +21,15 @@ class Program
         Console.WriteLine();
 
         BigInteger p = ReadBigInteger("Enter prime p (min 3)", min: 3);
-        BigInteger g = ReadBigInteger($"Enter base g (1 < g < p) (p = {p})", min: 2, max: p - 1);
-        BigInteger a = ReadBigInteger($"Enter Alice's private a (1 < a < p) (p = {p})", min: 2, max: p - 1);
-        BigInteger b = ReadBigInteger($"Enter Bob's private b (1 < b < p) (p = {p})", min: 2, max: p - 1);
-
-        Console.WriteLine();
         if (!IsProbablyPrime(p))
         {
             Console.WriteLine("Warning: The supplied p does not appear to be prime (or primality check inconclusive).");
             Console.WriteLine("Diffie-Hellman requires p to be prime for standard security properties.");
             Console.WriteLine();
         }
+        BigInteger g = ReadBigInteger($"Enter base g (1 < g < p) (p = {p})", min: 2, max: p - 1);
+        BigInteger a = ReadBigInteger($"Enter Alice's private a (1 < a < p) (p = {p})", min: 2, max: p - 1);
+        BigInteger b = ReadBigInteger($"Enter Bob's private b (1 < b < p) (p = {p})", min: 2, max: p - 1);
 
         BigInteger ga = BigInteger.ModPow(g, a, p);
         BigInteger gb = BigInteger.ModPow(g, b, p);
