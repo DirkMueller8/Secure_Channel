@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Secure_Channel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5438ff924b8364d17dc62e462f5d06982dde1ba7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0296f350b946d5a09cc49f08c41251f41ac35e1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Secure_Channel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Secure_Channel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
